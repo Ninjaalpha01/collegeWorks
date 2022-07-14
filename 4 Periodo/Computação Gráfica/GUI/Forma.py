@@ -17,22 +17,17 @@ class Forma:
     def translate(self, posX: float, posY: float):
         changeX = posX - self.vert[0].getX()
         changeY = posY - self.vert[0].getY()
-        
+        self.atualizarVertices(changeX, changeY)
+
+    def atualizarVertices(self, changeX, changeY):
         for i in range(len(self.vert)):
-            if i == 0:
-                self.vert[0].vert[0] = posX
-                self.vert[0].vert[1] = posY
-            else:
-                self.vert[i].vert[0] += changeX
-                self.vert[i].vert[1] += changeY
+            self.vert[i].vert[0] += changeX
+            self.vert[i].vert[1] += changeY
 
     def rotate(self, angle: float):
-        i = 1
-        for i in range(2):
+        for i in range(len(self.vert)):
             self.vert[i].vert[0] = (self.vert[i].getX() * cos(angle)) - (self.vert[i].getY() * sin(angle))
             self.vert[i].vert[1] = (self.vert[i].getX() * sin(angle)) - (self.vert[i].getY() * cos(angle))
-            print(self.vert[i].getX())
-            print(self.vert[i].getY())
 
 class Ponto(Forma):
     def __init__(self, numId: int, x: float, y: float):

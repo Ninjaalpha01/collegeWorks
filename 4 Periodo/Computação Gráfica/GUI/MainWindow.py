@@ -28,9 +28,9 @@ class MainWin(QMainWindow):
         self.labelObjetos.setFont(font)
         self.labelObjetos.setObjectName("labelObjetos")
         
-        self.comboObj = QComboBox(self.centralwidget)
-        self.comboObj.setGeometry(QRect(30, 50, 201, 30))
-        self.comboObj.setObjectName("comboObj")
+        self.comboBoxObjetos = QComboBox(self.centralwidget)
+        self.comboBoxObjetos.setGeometry(QRect(30, 50, 201, 30))
+        self.comboBoxObjetos.setObjectName("comboBoxObjetos")
         
         self.labelViewPort = QLabel(self.centralwidget)
         self.labelViewPort.setGeometry(QRect(270, 20, 200, 30))
@@ -48,62 +48,62 @@ class MainWin(QMainWindow):
         self.botaoVertices.setFont(font)
         self.botaoVertices.setObjectName("botaoVertices")
         
-        self.botaoTransf = QPushButton(self.centralwidget)
-        self.botaoTransf.setGeometry(QRect(130, 90, 100, 30))
+        self.botaoTransformada = QPushButton(self.centralwidget)
+        self.botaoTransformada.setGeometry(QRect(130, 90, 100, 30))
         font = QFont()
         font.setPointSize(10)
-        self.botaoTransf.setFont(font)
-        self.botaoTransf.setObjectName("botaoTransf")
+        self.botaoTransformada.setFont(font)
+        self.botaoTransformada.setObjectName("botaoTransformada")
         
-        self.frameVert = QFrame(self.centralwidget)
-        self.frameVert.setGeometry(QRect(20, 130, 221, 421))
-        self.frameVert.setStyleSheet("\n")
-        self.frameVert.setFrameShape(QFrame.StyledPanel)
-        self.frameVert.setFrameShadow(QFrame.Raised)
-        self.frameVert.setObjectName("frameVert")
+        self.frameVertices = QFrame(self.centralwidget)
+        self.frameVertices.setGeometry(QRect(20, 130, 221, 421))
+        self.frameVertices.setStyleSheet("\n")
+        self.frameVertices.setFrameShape(QFrame.StyledPanel)
+        self.frameVertices.setFrameShadow(QFrame.Raised)
+        self.frameVertices.setObjectName("frameVertices")
         
-        self.framePon = QFrame(self.frameVert)
-        self.framePon.setGeometry(QRect(0, 30, 221, 231))
-        self.framePon.setFrameShape(QFrame.StyledPanel)
-        self.framePon.setFrameShadow(QFrame.Raised)
-        self.framePon.setObjectName("framePon")
+        self.framePoint = QFrame(self.frameVertices)
+        self.framePoint.setGeometry(QRect(0, 30, 221, 231))
+        self.framePoint.setFrameShape(QFrame.StyledPanel)
+        self.framePoint.setFrameShadow(QFrame.Raised)
+        self.framePoint.setObjectName("framePoint")
         
-        self.listWP = QListWidget(self.framePon)
-        self.listWP.setGeometry(QRect(10, 10, 200, 211))
-        self.listWP.setObjectName("listWP")
+        self.listWidgetPoint = QListWidget(self.framePoint)
+        self.listWidgetPoint.setGeometry(QRect(10, 10, 200, 211))
+        self.listWidgetPoint.setObjectName("listWidgetPoint")
         
-        self.botaoDelete = QPushButton(self.frameVert)
+        self.botaoDelete = QPushButton(self.frameVertices)
         self.botaoDelete.setGeometry(QRect(111, 321, 101, 30))
         self.botaoDelete.setObjectName("botaoDelete")
         
-        self.spinX = QDoubleSpinBox(self.frameVert)
-        self.spinX.setGeometry(QRect(21, 271, 81, 31))
+        self.spinBoxX = QDoubleSpinBox(self.frameVertices)
+        self.spinBoxX.setGeometry(QRect(21, 271, 81, 31))
         font = QFont()
         font.setPointSize(10)
-        self.spinX.setFont(font)
-        self.spinX.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.spinX.setAlignment(Qt.AlignCenter)
-        self.spinX.setMinimum(-1000.0)
-        self.spinX.setMaximum(1000.0)
-        self.spinX.setObjectName("spinX")
+        self.spinBoxX.setFont(font)
+        self.spinBoxX.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.spinBoxX.setAlignment(Qt.AlignCenter)
+        self.spinBoxX.setMinimum(-1000.0)
+        self.spinBoxX.setMaximum(1000.0)
+        self.spinBoxX.setObjectName("spinBoxX")
         
-        self.spinY = QDoubleSpinBox(self.frameVert)
-        self.spinY.setGeometry(QRect(121, 271, 81, 31))
+        self.spinBoxY = QDoubleSpinBox(self.frameVertices)
+        self.spinBoxY.setGeometry(QRect(121, 271, 81, 31))
         font = QFont()
         font.setPointSize(10)
-        self.spinY.setFont(font)
-        self.spinY.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.spinY.setAlignment(Qt.AlignCenter)
-        self.spinY.setPrefix("")
-        self.spinY.setMinimum(-1000.0)
-        self.spinY.setMaximum(1000.0)
-        self.spinY.setObjectName("spinY")
+        self.spinBoxY.setFont(font)
+        self.spinBoxY.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.spinBoxY.setAlignment(Qt.AlignCenter)
+        self.spinBoxY.setPrefix("")
+        self.spinBoxY.setMinimum(-1000.0)
+        self.spinBoxY.setMaximum(1000.0)
+        self.spinBoxY.setObjectName("spinBoxY")
         
-        self.botaoOk = QPushButton(self.frameVert)
+        self.botaoOk = QPushButton(self.frameVertices)
         self.botaoOk.setGeometry(QRect(11, 321, 101, 30))
         self.botaoOk.setObjectName("botaoOk")
         
-        self.labelVertices = QLabel(self.frameVert)
+        self.labelVertices = QLabel(self.frameVertices)
         self.labelVertices.setGeometry(QRect(11, 1, 200, 30))
         font = QFont()
         font.setPointSize(12)
@@ -113,69 +113,69 @@ class MainWin(QMainWindow):
         self.labelVertices.setAlignment(Qt.AlignCenter)
         self.labelVertices.setObjectName("labelVertices")
         
-        self.frameTri = QFrame(self.frameVert)
+        self.frameTri = QFrame(self.frameVertices)
         self.frameTri.setGeometry(QRect(0, 30, 221, 231))
         self.frameTri.setFrameShape(QFrame.StyledPanel)
         self.frameTri.setFrameShadow(QFrame.Raised)
         self.frameTri.setObjectName("frameTri")
         
-        self.listWT = QListWidget(self.frameTri)
-        self.listWT.setGeometry(QRect(10, 10, 200, 211))
-        self.listWT.setObjectName("listWT")
+        self.listWidgetTri = QListWidget(self.frameTri)
+        self.listWidgetTri.setGeometry(QRect(10, 10, 200, 211))
+        self.listWidgetTri.setObjectName("listWidgetTri")
         
-        self.framePol = QFrame(self.frameVert)
-        self.framePol.setGeometry(QRect(0, 30, 221, 231))
-        self.framePol.setFrameShape(QFrame.StyledPanel)
-        self.framePol.setFrameShadow(QFrame.Raised)
-        self.framePol.setObjectName("framePol")
+        self.framePoly = QFrame(self.frameVertices)
+        self.framePoly.setGeometry(QRect(0, 30, 221, 231))
+        self.framePoly.setFrameShape(QFrame.StyledPanel)
+        self.framePoly.setFrameShadow(QFrame.Raised)
+        self.framePoly.setObjectName("framePoly")
         
-        self.listWF = QListWidget(self.framePol)
-        self.listWF.setGeometry(QRect(10, 10, 200, 151))
-        self.listWF.setObjectName("listWF")
+        self.listWidgetPoly = QListWidget(self.framePoly)
+        self.listWidgetPoly.setGeometry(QRect(10, 10, 200, 151))
+        self.listWidgetPoly.setObjectName("listWidgetPoly")
 
-        self.spinQntP = QSpinBox(self.framePol)
-        self.spinQntP.setGeometry(QRect(120, 180, 80, 30))
+        self.boxQntPoints = QSpinBox(self.framePoly)
+        self.boxQntPoints.setGeometry(QRect(120, 180, 80, 30))
         font = QFont()
         font.setPointSize(10)
-        self.spinQntP.setFont(font)
-        self.spinQntP.setAlignment(Qt.AlignCenter)
-        self.spinQntP.setMinimum(4)
-        self.spinQntP.setMaximum(10)
-        self.spinQntP.setObjectName("spinQntP")
+        self.boxQntPoints.setFont(font)
+        self.boxQntPoints.setAlignment(Qt.AlignCenter)
+        self.boxQntPoints.setMinimum(4)
+        self.boxQntPoints.setMaximum(10)
+        self.boxQntPoints.setObjectName("spinQntPoints")
 
-        self.labelQntP = QLabel(self.framePol)
-        self.labelQntP.setGeometry(QRect(20, 180, 80, 30))
+        self.labelQntPoints = QLabel(self.framePoly)
+        self.labelQntPoints.setGeometry(QRect(20, 180, 80, 30))
         font = QFont()
         font.setBold(True)
         font.setPointSize(8)
-        self.labelQntP.setFont(font)
-        self.labelQntP.setAlignment(Qt.AlignCenter)
-        self.labelQntP.setObjectName("labelQntP")
+        self.labelQntPoints.setFont(font)
+        self.labelQntPoints.setAlignment(Qt.AlignCenter)
+        self.labelQntPoints.setObjectName("labelQntPoints")
         
-        self.botaoDesenha = QPushButton(self.frameVert)
+        self.botaoDesenha = QPushButton(self.frameVertices)
         self.botaoDesenha.setGeometry(QRect(50, 370, 121, 41))
         font = QFont()
         font.setPointSize(10)
         self.botaoDesenha.setFont(font)
         self.botaoDesenha.setObjectName("botaoDesenha")
         
-        self.frameTransf = QFrame(self.centralwidget)
-        self.frameTransf.setGeometry(QRect(20, 130, 221, 421))
-        self.frameTransf.setFrameShape(QFrame.StyledPanel)
-        self.frameTransf.setFrameShadow(QFrame.Raised)
-        self.frameTransf.setObjectName("frameTransf")
+        self.frameTransformada = QFrame(self.centralwidget)
+        self.frameTransformada.setGeometry(QRect(20, 130, 221, 421))
+        self.frameTransformada.setFrameShape(QFrame.StyledPanel)
+        self.frameTransformada.setFrameShadow(QFrame.Raised)
+        self.frameTransformada.setObjectName("frameTransformada")
         
-        self.labelTransf = QLabel(self.frameTransf)
-        self.labelTransf.setGeometry(QRect(10, 0, 200, 30))
+        self.labelTransformada = QLabel(self.frameTransformada)
+        self.labelTransformada.setGeometry(QRect(10, 0, 200, 30))
         font = QFont()
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.labelTransf.setFont(font)
-        self.labelTransf.setAlignment(Qt.AlignCenter)
-        self.labelTransf.setObjectName("labelTransf")
+        self.labelTransformada.setFont(font)
+        self.labelTransformada.setAlignment(Qt.AlignCenter)
+        self.labelTransformada.setObjectName("labelTransformada")
         
-        self.labelTranslate = QLabel(self.frameTransf)
+        self.labelTranslate = QLabel(self.frameTransformada)
         self.labelTranslate.setGeometry(QRect(10, 80, 71, 30))
         font = QFont()
         font.setPointSize(10)
@@ -184,27 +184,27 @@ class MainWin(QMainWindow):
         self.labelTranslate.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.labelTranslate.setObjectName("labelTranslate")
         
-        self.spinXT = QDoubleSpinBox(self.frameTransf)
-        self.spinXT.setGeometry(QRect(20, 120, 60, 30))
+        self.boxXTranslate = QDoubleSpinBox(self.frameTransformada)
+        self.boxXTranslate.setGeometry(QRect(20, 120, 60, 30))
         font = QFont()
         font.setPointSize(8)
         font.setWeight(50)
-        self.spinXT.setFont(font)
-        self.spinXT.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.spinXT.setAlignment(Qt.AlignCenter)
-        self.spinXT.setPrefix("")
-        self.spinXT.setMinimum(-1000.0)
-        self.spinXT.setMaximum(1000.0)
-        self.spinXT.setObjectName("spinXT")
+        self.boxXTranslate.setFont(font)
+        self.boxXTranslate.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.boxXTranslate.setAlignment(Qt.AlignCenter)
+        self.boxXTranslate.setPrefix("")
+        self.boxXTranslate.setMinimum(-1000.0)
+        self.boxXTranslate.setMaximum(1000.0)
+        self.boxXTranslate.setObjectName("boxXTranslate")
         
-        self.botaoOkT = QPushButton(self.frameTransf)
-        self.botaoOkT.setGeometry(QRect(140, 120, 70, 30))
+        self.botaoOkTranslate = QPushButton(self.frameTransformada)
+        self.botaoOkTranslate.setGeometry(QRect(140, 120, 70, 30))
         font = QFont()
         font.setWeight(50)
-        self.botaoOkT.setFont(font)
-        self.botaoOkT.setObjectName("botaoOkT")
+        self.botaoOkTranslate.setFont(font)
+        self.botaoOkTranslate.setObjectName("botaoOkTranslate")
         
-        self.labelRotate = QLabel(self.frameTransf)
+        self.labelRotate = QLabel(self.frameTransformada)
         self.labelRotate.setGeometry(QRect(10, 300, 71, 30))
         font = QFont()
         font.setPointSize(10)
@@ -213,25 +213,25 @@ class MainWin(QMainWindow):
         self.labelRotate.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.labelRotate.setObjectName("labelRotate")
         
-        self.labelXT = QLabel(self.frameTransf)
-        self.labelXT.setGeometry(QRect(20, 150, 41, 21))
+        self.labelXTranslate = QLabel(self.frameTransformada)
+        self.labelXTranslate.setGeometry(QRect(20, 150, 41, 21))
         font = QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.labelXT.setFont(font)
-        self.labelXT.setAlignment(Qt.AlignCenter)
-        self.labelXT.setObjectName("labelXT")
+        self.labelXTranslate.setFont(font)
+        self.labelXTranslate.setAlignment(Qt.AlignCenter)
+        self.labelXTranslate.setObjectName("labelXTranslate")
         
-        self.labelYT = QLabel(self.frameTransf)
-        self.labelYT.setGeometry(QRect(80, 150, 41, 21))
+        self.labelYTranslate = QLabel(self.frameTransformada)
+        self.labelYTranslate.setGeometry(QRect(80, 150, 41, 21))
         font = QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.labelYT.setFont(font)
-        self.labelYT.setAlignment(Qt.AlignCenter)
-        self.labelYT.setObjectName("labelYT")
+        self.labelYTranslate.setFont(font)
+        self.labelYTranslate.setAlignment(Qt.AlignCenter)
+        self.labelYTranslate.setObjectName("labelYTranslate")
         
-        self.labelScale = QLabel(self.frameTransf)
+        self.labelScale = QLabel(self.frameTransformada)
         self.labelScale.setGeometry(QRect(10, 190, 71, 30))
         font = QFont()
         font.setPointSize(10)
@@ -240,36 +240,36 @@ class MainWin(QMainWindow):
         self.labelScale.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.labelScale.setObjectName("labelScale")
         
-        self.spinXS = QDoubleSpinBox(self.frameTransf)
-        self.spinXS.setGeometry(QRect(20, 230, 120, 30))
+        self.boxXScale = QDoubleSpinBox(self.frameTransformada)
+        self.boxXScale.setGeometry(QRect(20, 230, 120, 30))
         font = QFont()
         font.setPointSize(8)
         font.setWeight(50)
-        self.spinXS.setFont(font)
-        self.spinXS.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.spinXS.setAlignment(Qt.AlignCenter)
-        self.spinXS.setValue(1.00)
-        self.spinXS.setMinimum(0.001)
-        self.spinXS.setMaximum(100.0)
-        self.spinXS.setObjectName("spinXS")
+        self.boxXScale.setFont(font)
+        self.boxXScale.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.boxXScale.setAlignment(Qt.AlignCenter)
+        self.boxXScale.setValue(1.00)
+        self.boxXScale.setMinimum(0.001)
+        self.boxXScale.setMaximum(100.0)
+        self.boxXScale.setObjectName("boxXScale")
         
-        self.labelXS = QLabel(self.frameTransf)
-        self.labelXS.setGeometry(QRect(20, 260, 111, 21))
+        self.labelXScale = QLabel(self.frameTransformada)
+        self.labelXScale.setGeometry(QRect(20, 260, 111, 21))
         font = QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.labelXS.setFont(font)
-        self.labelXS.setAlignment(Qt.AlignCenter)
-        self.labelXS.setObjectName("labelXS")
+        self.labelXScale.setFont(font)
+        self.labelXScale.setAlignment(Qt.AlignCenter)
+        self.labelXScale.setObjectName("labelXScale")
         
-        self.botaoOkS = QPushButton(self.frameTransf)
-        self.botaoOkS.setGeometry(QRect(140, 230, 70, 30))
+        self.botaoOkScale = QPushButton(self.frameTransformada)
+        self.botaoOkScale.setGeometry(QRect(140, 230, 70, 30))
         font = QFont()
         font.setWeight(50)
-        self.botaoOkS.setFont(font)
-        self.botaoOkS.setObjectName("botaoOkS")
+        self.botaoOkScale.setFont(font)
+        self.botaoOkScale.setObjectName("botaoOkScale")
         
-        self.radioButtonX = QRadioButton(self.frameTransf)
+        self.radioButtonX = QRadioButton(self.frameTransformada)
         self.radioButtonX.setGeometry(QRect(20, 340, 41, 17))
         font = QFont()
         font.setPointSize(10)
@@ -278,7 +278,7 @@ class MainWin(QMainWindow):
         self.radioButtonX.setFont(font)
         self.radioButtonX.setObjectName("radioButtonX")
         
-        self.radioButtonY = QRadioButton(self.frameTransf)
+        self.radioButtonY = QRadioButton(self.frameTransformada)
         self.radioButtonY.setGeometry(QRect(20, 360, 41, 17))
         font = QFont()
         font.setPointSize(10)
@@ -287,7 +287,7 @@ class MainWin(QMainWindow):
         self.radioButtonY.setFont(font)
         self.radioButtonY.setObjectName("radioButtonY")
         
-        self.radioButtonZ = QRadioButton(self.frameTransf)
+        self.radioButtonZ = QRadioButton(self.frameTransformada)
         self.radioButtonZ.setGeometry(QRect(20, 380, 41, 17))
         font = QFont()
         font.setPointSize(10)
@@ -297,7 +297,7 @@ class MainWin(QMainWindow):
         self.radioButtonZ.setChecked(True)
         self.radioButtonZ.setObjectName("radioButtonZ")
         
-        self.spinAngle = QSpinBox(self.frameTransf)
+        self.spinAngle = QSpinBox(self.frameTransformada)
         self.spinAngle.setGeometry(QRect(80, 350, 60, 30))
         font = QFont()
         font.setPointSize(10)
@@ -306,7 +306,7 @@ class MainWin(QMainWindow):
         self.spinAngle.setMaximum(359)
         self.spinAngle.setObjectName("spinAngle")
         
-        self.labelAngle = QLabel(self.frameTransf)
+        self.labelAngle = QLabel(self.frameTransformada)
         self.labelAngle.setGeometry(QRect(80, 380, 41, 21))
         font = QFont()
         font.setBold(True)
@@ -315,26 +315,26 @@ class MainWin(QMainWindow):
         self.labelAngle.setAlignment(Qt.AlignCenter)
         self.labelAngle.setObjectName("labelAngle")
         
-        self.botaoOkR = QPushButton(self.frameTransf)
-        self.botaoOkR.setGeometry(QRect(140, 350, 71, 31))
+        self.botaoOkRotate = QPushButton(self.frameTransformada)
+        self.botaoOkRotate.setGeometry(QRect(140, 350, 71, 31))
         font = QFont()
         font.setWeight(50)
-        self.botaoOkR.setFont(font)
-        self.botaoOkR.setObjectName("botaoOkR")
+        self.botaoOkRotate.setFont(font)
+        self.botaoOkRotate.setObjectName("botaoOkRotate")
 
-        self.spinYT = QDoubleSpinBox(self.frameTransf)
-        self.spinYT.setGeometry(QRect(80, 120, 60, 30))
+        self.boxYTranslate = QDoubleSpinBox(self.frameTransformada)
+        self.boxYTranslate.setGeometry(QRect(80, 120, 60, 30))
         font = QFont()
         font.setPointSize(8)
-        self.spinYT.setFont(font)
-        self.spinYT.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
-        self.spinYT.setAlignment(Qt.AlignCenter)
-        self.spinYT.setPrefix("")
-        self.spinYT.setMinimum(-1000.0)
-        self.spinYT.setMaximum(1000.0)
-        self.spinYT.setObjectName("spinYT")
+        self.boxYTranslate.setFont(font)
+        self.boxYTranslate.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
+        self.boxYTranslate.setAlignment(Qt.AlignCenter)
+        self.boxYTranslate.setPrefix("")
+        self.boxYTranslate.setMinimum(-1000.0)
+        self.boxYTranslate.setMaximum(1000.0)
+        self.boxYTranslate.setObjectName("boxYTranslate")
 
-        self.labelForma = QLabel(self.frameTransf)
+        self.labelForma = QLabel(self.frameTransformada)
         self.labelForma.setGeometry(QRect(10, 40, 111, 30))
         font = QFont()
         font.setBold(True)
@@ -344,14 +344,32 @@ class MainWin(QMainWindow):
         self.labelForma.setAlignment(Qt.AlignCenter)
         self.labelForma.setObjectName("labelForma")
 
-        self.comboID = QComboBox(self.frameTransf)
-        self.comboID.setGeometry(QRect(130, 40, 81, 30))
-        self.comboID.setObjectName("comboID")
+        self.comboBoxID = QComboBox(self.frameTransformada)
+        self.comboBoxID.setGeometry(QRect(130, 40, 81, 30))
+        self.comboBoxID.setObjectName("comboBoxID")
 
         self.viewPort = ViewPort(self.centralwidget)
         self.viewPort.setGeometry(QRect(270, 50, 500, 500))
         self.viewPort.setObjectName("viewPort")
         # self.<nomeObjeto> = <objeto>(self.viewPort)
+
+        self.botaoClip = QPushButton(self.centralwidget)
+        self.botaoClip.setGeometry(QRect(650, 10, 101, 31))
+        font = QFont()
+        font.setBold(True)
+        font.setWeight(50)
+        self.botaoClip.setFont(font)
+        self.botaoClip.setObjectName("botaoClip")
+
+        self.labelClipAtivo = QLabel(self.centralwidget)
+        self.labelClipAtivo.setGeometry(QRect(550, 10, 100, 30))
+        font = QFont()
+        font.setBold(True)
+        font.setWeight(100)
+        font.setPointSize(10)
+        self.labelClipAtivo.setFont(font)
+        self.labelClipAtivo.setAlignment(Qt.AlignCenter)
+        self.labelClipAtivo.setObjectName("albelClipAtivo")
 
         self.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(self)
@@ -367,202 +385,236 @@ class MainWin(QMainWindow):
         self.countTransf = 0        # contador de transformadas / variavel auxiliar
 
         self.listaPontos = []       # lista com todos os pontos
-        self.idsPonto = []          # lista com todos ids dos pontos
+        self.idsPointList = []          # lista com todos ids dos pontos
         self.listaTriangulos = []   # lista com todos os triangulos
-        self.idsTriangulo = []      # lista com todos ids dos triangulos
+        self.idsTriangleList = []      # lista com todos ids dos triangulos
         self.listaPoligonos = []    # lista com todos os poligonos
-        self.idsPoligono = []       # lista com todos ids dos poligonos
+        self.idsPoligonList = []       # lista com todos ids dos poligonos
 
         self.countPonTri = 0        # contador de pontos no triangulo / variavel de controle
         self.qntdPonTri = 3         # quantidade de pontos no triangulo / variavel de auxilio
-        self.vertTri = []           # lista de vertices do triangulo / variavel de controle
+        self.verticesTri = []           # lista de vertices do triangulo / variavel de controle
 
         self.countPonPol = 0        # contador de pontos dentro do poligono
         self.qntdPonPol = 0         # quantidade de pontos no poligono / variavel de controle
-        self.vertPol = []           # lista de vertices do poligono / variavel de controle
+        self.verticesPol = []           # lista de vertices do poligono / variavel de controle
 
-        self.main()
+        self.isClipActive = False
+
+        self.startUi()
 
     def retranslateUi(self):
         self.setWindowTitle("Computação Gráfica")
         self.labelObjetos.setText("Objetos")
         self.labelViewPort.setText("Viewport")
         self.botaoVertices.setText("Vertices")
-        self.botaoTransf.setText("Transformada")
-        self.labelQntP.setText("Qntd. Pontos:")
+        self.botaoTransformada.setText("Transformada")
+        self.labelQntPoints.setText("Qntd. Pontos:")
         self.botaoDelete.setText("Delete")
         self.botaoOk.setText("OK")
         self.labelVertices.setText("Vértices")
         self.botaoDesenha.setText("Desenha")
-        self.labelTransf.setText("Transformadas")
+        self.labelTransformada.setText("Transformadas")
         self.labelForma.setText("ID Forma:")
         self.labelTranslate.setText("Translação:")
-        self.botaoOkT.setText("OK")
+        self.botaoOkTranslate.setText("OK")
         self.labelRotate.setText("Rotação:")
-        self.labelXT.setText("X")
-        self.labelYT.setText("Y")
+        self.labelXTranslate.setText("X")
+        self.labelYTranslate.setText("Y")
         self.labelScale.setText("Escala:")
-        self.labelXS.setText("Multiplicador")
-        self.botaoOkS.setText("OK")
+        self.labelXScale.setText("Multiplicador")
+        self.botaoOkScale.setText("OK")
         self.radioButtonX.setText("X")
         self.radioButtonY.setText("Y")
         self.radioButtonZ.setText("Z")
         self.spinAngle.setSuffix("°")
         self.labelAngle.setText("Ângulo")
-        self.botaoOkR.setText("OK")
+        self.botaoOkRotate.setText("OK")
+        self.botaoClip.setText("Clipping")
+        self.labelClipAtivo.setText("Ativo")
     
-    def main(self):
-        # definindo padrões iniciais
-        self.frameVert.close()
-        self.frameTransf.close()
-        self.listWP.addItem('Pontos:')
-        self.listWT.addItem('Triangulos:')
-        self.listWF.addItem('Poligonos:')
+    def startUi(self):
+        self.setupFrameState()
+        self.setupFormsList()
 
-        self.comboObj.addItems(['Ponto', 'Triangulo', 'Poligono'])
+        self.comboBoxObjetos.addItems(['Ponto', 'Triangulo', 'Poligono'])
 
-        # primeiras interações
-        self.botaoVertices.clicked.connect(self.vertices)
-        self.botaoTransf.clicked.connect(self.transformadas)
+        self.setupFirstPageButtons()
+
+    def setupFrameState(self):
+        self.frameVertices.close()
+        self.frameTransformada.close()
+        self.labelClipAtivo.close()
     
-    def vertices(self):
-        # quando botaoVertices é acionado dispara esta função que por sua
-        # vez mostra qual frame que será exibido
+    def setupFormsList(self):
+        self.listWidgetPoint.addItem('Pontos:')
+        self.listWidgetTri.addItem('Triangulos:')
+        self.listWidgetPoly.addItem('Poligonos:')
+    
+    def setupFirstPageButtons(self):
+        self.botaoVertices.clicked.connect(self.selectVertFrame)
+        self.botaoTransformada.clicked.connect(self.selectTransFrame)
+        self.botaoClip.clicked.connect(self.switchClip)
 
-        self.botaoOk.disconnect()
-        # self.botaoDelete.disconnect()
-        self.frameVert.show()
-        self.frameTransf.close()
-        
-        objeto = self.comboObj.currentText()            # pegando valor da combo box
+    def switchClip(self):
+        self.viewPort.clippingTurnOnOff()
+        self.isClipActive = not(self.isClipActive)
+        if self.isClipActive == True:
+            self.labelClipAtivo.show()
+        else:
+            self.labelClipAtivo.close()
+
+    def selectVertFrame(self):
+        self.setupVertFrame()
+        objeto = self.comboBoxObjetos.currentText()
         
         if objeto == 'Ponto':
-            self.framePon.show()
+            self.framePoint.show()
             self.frameTri.close()
-            self.framePol.close()
-            self.botaoOk.clicked.connect(self.getPonto)
+            self.framePoly.close()
+            self.botaoOk.clicked.connect(self.createPoint)
         
         elif objeto == 'Triangulo':
-            self.framePon.close()
+            self.framePoint.close()
             self.frameTri.show()
-            self.framePol.close()
-            self.botaoOk.clicked.connect(self.getTriangulo)
+            self.framePoly.close()
+            self.botaoOk.clicked.connect(self.configTriangle)
         
         elif objeto == 'Poligono':
-            self.framePon.close()
+            self.framePoint.close()
             self.frameTri.close()
-            self.framePol.show()
-            self.botaoOk.clicked.connect(self.getPoligono)  
+            self.framePoly.show()
+            self.botaoOk.clicked.connect(self.configPolygon) 
+
+    def setupVertFrame(self):
+        self.reconfigVertFrameButtons()
+        self.showVerticesFrame()
+
+    def reconfigVertFrameButtons(self):
+        self.botaoOk.disconnect()
+        # self.botaoDelete.disconnect()
+
+    def showVerticesFrame(self):
+        self.frameVertices.show()
+        self.frameTransformada.close() 
             
-    def getPonto(self):
-        # configura o ponto com os atributos que estão nas double boxes
-        ponto = Ponto(self.countPon+1, self.spinX.value(), self.spinY.value())
-        self.setPonto(ponto)
+    def createPoint(self):
+        ponto = Ponto(self.countPon+1, self.spinBoxX.value(), self.spinBoxY.value())
+        self.setPoint(ponto)
 
-    def setPonto(self, ponto: Ponto):
-        # seta o ponto de fato colocando na lista de pontos e também deixando pronto
-        # para ser desenhado
-        self.botaoDesenha.disconnect()
-
+    def setPoint(self, ponto: Ponto):
         def desenhaPon():
            self.desenha(ponto)
+        self.botaoDesenha.disconnect()
+        self.listarPonto(ponto)
+        self.botaoDesenha.clicked.connect(desenhaPon)
 
+    def listarPonto(self, ponto):
         if self.countPon < 10:
             self.listaPontos.append(ponto)
-            self.listWP.addItem(f'{ponto.getId()}:\t {ponto.getVert()}')    # adiciona o ponto para uma lista que é mostrada na tela
+            self.listWidgetPoint.addItem(f'{ponto.getId()}:\t {ponto.getVert()}')    # adiciona o ponto para uma lista que é mostrada na tela
             self.countPon += 1
-            self.idsPonto.append((str)(ponto.getId()))                      # adiciona o id do ponto que foi criado à lista de ids
+            self.idsPointList.append((str)(ponto.getId()))                      # adiciona o id do ponto que foi criado à lista de ids
 
         else:
             print('limite de pontos excedidos')
 
-        self.botaoDesenha.clicked.connect(desenhaPon)
-
-    def getTriangulo(self):
-        # configura cada ponto do triangulo, quando todos os 3 pontos forem lidos
-        # dispara a função que de fato cria o triangulo
+    def configTriangle(self):
         if self.countTri >= 2:
             print('limite de triangulos excedidos')
             return
 
-        if self.countPonTri < self.qntdPonTri:
-            vertice = (Ponto)(self.countPonTri, self.spinX.value(), self.spinY.value())
-            self.vertTri.append(vertice)
-
-            if self.countPonTri == 0:
-                self.listWT.addItem(f'{self.countTri+1} :')
-
-            self.listWT.addItem(f'     Ponto {self.countPonTri+1}: ({vertice.getX()}, {vertice.getY()})')
-
+        self.getTrianglePoints()
         self.countPonTri += 1
 
-        if self.countPonTri == self.qntdPonTri:      # lógica usada para que se passe um vetor de pontos para criar o triangulo
-            tri = []
-            for i in range(self.qntdPonTri):
-                tri.append(self.vertTri[i])
-            self.vertTri.clear()
-            self.setTriangulo(Triangulo(self.countTri+1, tri))
+        if self.countPonTri == self.qntdPonTri:
+            self.createTriangle()
 
-    def setTriangulo(self, triangulo: Triangulo):
-        # função que de fato cria o triangulo e o deixa pronto para ser desenhado
+    def getTrianglePoints(self):
+        if self.countPonTri < self.qntdPonTri:
+            vertice = (Ponto)(self.countPonTri, self.spinBoxX.value(), self.spinBoxY.value())
+            self.listTrianglePoints(vertice)
+    
+    def listTrianglePoints(self, vertice):
+        self.verticesTri.append(vertice)
+
+        if self.countPonTri == 0:
+            self.listWidgetTri.addItem(f'{self.countTri+1} :')
+
+        self.listWidgetTri.addItem(f'     Ponto {self.countPonTri+1}: ({vertice.getX()}, {vertice.getY()})')
+    
+    def createTriangle(self):
+        tri = []
+        for i in range(self.qntdPonTri):
+            tri.append(self.verticesTri[i])
+        self.verticesTri.clear()
+        self.setTriangle(Triangulo(self.countTri+1, tri))
+
+    def setTriangle(self, triangulo: Triangulo):
+        def desenhaTri():
+            self.desenha(triangulo)
         self.botaoDesenha.disconnect()
-
-        if self.countTri < 2:
-            def desenhaTri():
-                self.desenha(triangulo)
-            
-            self.listaTriangulos.append(triangulo)
-            self.countTri += 1
-            self.idsTriangulo.append((str)(triangulo.getId()))
-        
+        self.setOnTriangleList(triangulo)
         self.countPonTri = 0
         self.botaoDesenha.clicked.connect(desenhaTri)
+
+    def setOnTriangleList(self, triangulo):
+        if self.countTri < 2:
+            self.listaTriangulos.append(triangulo)
+            self.countTri += 1
+            self.idsTriangleList.append((str)(triangulo.getId()))
     
-    def getPoligono(self):
-        # usando o mesmo principio da função getTriangulo configura-se os
-        # pontos do poligono de acordo com a quantidade de pontos capturada pela spin box
+    def configPolygon(self):
         if self.countPol > 0:
+            print('limite de poligonos excedidos')
             return
 
-        if self.countPonPol == 0:
-            self.qntdPonPol = self.spinQntP.value()             # guarda quantos pontos serão necessários para o poligono
+        self.getQntdPonPol()
 
-        if self.countPonPol < self.qntdPonPol: #reseta no setPoligono
-            vertice = (Ponto)(self.countPonPol, self.spinX.value(), self.spinY.value())
-            self.vertPol.append(vertice)
-
-            if self.countPonPol == 0:
-                self.listWF.addItem(f'{self.countPol+1} :')
-
-            self.listWF.addItem(f'     Ponto {self.countPonPol}: ({vertice.getX()}, {vertice.getY()})')
-
+        self.getPolygonPoints()
         self.countPonPol += 1
 
         if self.countPonPol == self.qntdPonPol:
-            pol = []                                        # vetor de poligonos
-            for i in range(self.qntdPonPol):
-                pol.append(self.vertPol[i])
+            self.createPolygon()
 
-            self.vertPol.clear()
-            self.setPoligono(Poligono(self.countTri+1, pol))
+    def getQntdPonPol(self):
+        if self.countPonPol == 0:
+            self.qntdPonPol = self.boxQntPoints.value()
 
-    def setPoligono(self, poligono: Poligono):
-        self.botaoDesenha.disconnect()
+    def getPolygonPoints(self):
+        if self.countPonPol < self.qntdPonPol:
+            vertice = (Ponto)(self.countPonPol, self.spinBoxX.value(), self.spinBoxY.value())
+            self.verticesPol.append(vertice)
+            self.listPolygonPoints(vertice)
 
+    def listPolygonPoints(self, vertice):
+        if self.countPonPol == 0:
+            self.listWidgetPoly.addItem(f'{self.countPol+1} :')
+        self.listWidgetPoly.addItem(f'     Ponto {self.countPonPol}: ({vertice.getX()}, {vertice.getY()})')
+    
+    def createPolygon(self):
+        pol = []
+        for i in range(self.qntdPonPol):
+            pol.append(self.verticesPol[i])
+
+        self.verticesPol.clear()
+        self.setPolygon(Poligono(self.countPol+1, pol))
+
+    def setPolygon(self, poligono: Poligono):
         def desenhaPol():
             self.desenha(poligono)
+        self.botaoDesenha.disconnect()
+        self.setOnPolygonList(poligono)
+        self.countPonPol = 0
+        self.botaoDesenha.clicked.connect(desenhaPol)
 
+    def setOnPolygonList(self, poligono):
         if self.countPol < 1:
             self.listaPoligonos.append(poligono)
             self.countPol += 1
-            self.idsPoligono.append((str)(poligono.getId()))
-
-        self.countPonPol = 0
-        self.botaoDesenha.clicked.connect(desenhaPol)
+            self.idsPoligonList.append((str)(poligono.getId()))
     
     def desenha(self, forma):
-        # recebe uma forma por parâmetro e de acordo com a forma
-        # passada chama a função para desenhá-la
         if forma.forma == 'Ponto':
             self.viewPort.newPoint(forma)
         elif forma.forma == 'Triangulo':
@@ -570,112 +622,133 @@ class MainWin(QMainWindow):
         elif forma.forma == 'Poligono':
             self.viewPort.newPoligon(forma, self.qntdPonPol)
 
-    def transformadas(self):
-        # configura a visualização e lógica do frameTransf
-        self.frameVert.close()
-        self.frameTransf.show()
+    def selectTransFrame(self):
+        self.setupTransFrame()
+        objeto = self.comboBoxObjetos.currentText()
 
-        self.botaoOkT.disconnect()
-        self.botaoOkS.disconnect()
-        self.botaoOkS.clicked.connect(self.scaling)
-
-        objeto = self.comboObj.currentText()
-
-        # lógica feita para que possa ter controle de qual objeto irá realizar
-        # as transformadas
         if objeto == 'Ponto':
             def transPon():
                 self.translation('Ponto')
             
-            self.comboID.clear()
+            self.comboBoxID.clear()
             self.countTransf = 0
             self.labelForma.setText('ID Ponto:')
 
             while self.countTransf in range(self.countPon):
-                self.comboID.addItem((str)(self.idsPonto[self.countTransf]))
+                self.comboBoxID.addItem((str)(self.idsPointList[self.countTransf]))
                 self.countTransf += 1
             
-            self.botaoOkT.clicked.connect(transPon)
+            self.botaoOkTranslate.clicked.connect(transPon)
 
         elif objeto == 'Triangulo':
-            self.botaoOkR.disconnect()
+            self.botaoOkRotate.disconnect()
 
             def transTri():
                 self.translation('Triangulo')
             def rotateTri():
-                self.rotating('Triangulo')
+                self.rotation('Triangulo')
             
-            self.comboID.clear()
+            self.comboBoxID.clear()
             self.countTransf = 0
             self.labelForma.setText('ID Triangulo:')
 
             while self.countTransf in range(self.countTri):
-                self.comboID.addItem((str)(self.idsTriangulo[self.countTransf]))
+                self.comboBoxID.addItem((str)(self.idsTriangleList[self.countTransf]))
                 self.countTransf += 1
 
-            self.botaoOkT.clicked.connect(transTri)
-            self.botaoOkR.clicked.connect(rotateTri)
+            self.botaoOkTranslate.clicked.connect(transTri)
+            self.botaoOkRotate.clicked.connect(rotateTri)
         
         elif objeto == 'Poligono':
-            self.botaoOkR.disconnect()
+            self.botaoOkRotate.disconnect()
 
             def transPol():
                 self.translation('Poligono')
             def rotatePol():
-                self.rotating('Poligono')
+                self.rotation('Poligono')
 
-            self.comboID.clear()
+            self.comboBoxID.clear()
             self.countTransf = 0
             self.labelForma.setText('ID Poligono:')
 
             while self.countTransf in range(self.countPol):
-                self.comboID.addItem((str)(self.idsPoligono[self.countTransf]))
+                self.comboBoxID.addItem((str)(self.idsPoligonList[self.countTransf]))
                 self.countTransf += 1
             
-            self.botaoOkT.clicked.connect(transPol)
-            self.botaoOkR.clicked.connect(rotatePol)
-            
-    def translation(self, forma):
-        if self.comboID.currentText() == '':
-            return
+            self.botaoOkTranslate.clicked.connect(transPol)
+            self.botaoOkRotate.clicked.connect(rotatePol)
 
-        Id = (int)(self.comboID.currentText())
+    def setupTransFrame(self):
+        self.showTransFrame()
+        self.reconfigTransFrameButtons()
+        self.botaoOkScale.clicked.connect(self.scaling)
+
+    def showTransFrame(self):
+        self.frameVertices.close()
+        self.frameTransformada.show()
+    
+    def reconfigTransFrameButtons(self):
+        self.botaoOkScale.disconnect()
+        self.botaoOkTranslate.disconnect()
+
+    def getCurrentId(self):
+        if self.comboBoxID.currentText() == '':
+            return -1
+        else:
+            return (int)(self.comboBoxID.currentText())
+    
+    def translation(self, forma):
+        Id = self.getCurrentId()
+        if Id == -1:
+            return
         if forma == 'Ponto':
-            for i in range(len(self.listaPontos)):
-                if (self.listaPontos)[i].getId() == Id:
-                    ponto = self.listaPontos[i]
-                    ponto.translate(self.spinXT.value(), self.spinYT.value())
-                    self.desenha(ponto)
-                    break
+            self.translatePoint(Id)
 
         elif forma == 'Triangulo':
-            for i in range(len(self.listaTriangulos)):
-                if self.listaTriangulos[i].getId() == Id:
-                    triangulo = self.listaTriangulos[i]
-                    triangulo.translate(self.spinXT.value(), self.spinYT.value())
-                    self.desenha(triangulo)
-                    break
+            self.translateTriangle(Id)
         
         elif forma == 'Poligono':
-            for i in range(len(self.listaPoligonos)):
-                if self.listaPoligonos[i].getId() == Id:
-                    poligono = self.listaPoligonos[i]
-                    poligono.translate(self.spinXT.value(), self.spinYT.value())
-                    self.desenha(poligono)
-                    break
-    
-    def rotating(self, forma):
-        Id = (int)(self.comboID.currentText())                
+            self.translatePolygon(Id)
+
+    def translatePoint(self, Id):
+        for i in range(len(self.listaPontos)):
+            if (self.listaPontos)[i].getId() == Id:
+                ponto = self.listaPontos[i]
+                ponto.translate(self.boxXTranslate.value(), self.boxYTranslate.value())
+                self.desenha(ponto)
+                break
+
+    def translateTriangle(self, Id):
+        for i in range(len(self.listaTriangulos)):
+            if self.listaTriangulos[i].getId() == Id:
+                triangulo = self.listaTriangulos[i]
+                triangulo.translate(self.boxXTranslate.value(), self.boxYTranslate.value())
+                self.desenha(triangulo)
+                break
+
+    def translatePolygon(self, Id):
+        for i in range(len(self.listaPoligonos)):
+            if self.listaPoligonos[i].getId() == Id:
+                poligono = self.listaPoligonos[i]
+                poligono.translate(self.boxXTranslate.value(), self.boxYTranslate.value())
+                self.desenha(poligono)
+                break
+ 
+    def rotation(self, forma):
+        Id = self.getCurrentId()                
         if forma == 'Triangulo':
-            for i in range(len(self.listaTriangulos)):
-                if self.listaTriangulos[i].getId() == Id:
-                    triangulo = self.listaTriangulos[i]
-                    triangulo.rotate(self.spinAngle.value())
-                    self.desenha(triangulo)
-                    break
+            self.rotateTriangle(Id)
+
+    def rotateTriangle(self, Id):
+        for i in range(len(self.listaTriangulos)):
+            if self.listaTriangulos[i].getId() == Id:
+                triangulo = self.listaTriangulos[i]
+                triangulo.rotate(self.spinAngle.value())
+                self.desenha(triangulo)
+                break
 
     def scaling(self):
-        self.viewPort.setScale(self.spinXS.value())
+        self.viewPort.setScale(self.boxXScale.value())
 
 
 if __name__ == "__main__":
